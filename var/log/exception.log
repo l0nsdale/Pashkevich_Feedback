@@ -1,0 +1,204 @@
+2017-02-21T15:19:53+00:00 ERR (3): 
+exception 'Zend_Mail_Transport_Exception' with message 'Unable to send mail. ' in /var/www/sitename.com/lib/Zend/Mail/Transport/Sendmail.php:142
+Stack trace:
+#0 /var/www/sitename.com/lib/Zend/Mail/Transport/Abstract.php(348): Zend_Mail_Transport_Sendmail->_sendMail()
+#1 /var/www/sitename.com/lib/Zend/Mail.php(1194): Zend_Mail_Transport_Abstract->send(Object(Zend_Mail))
+#2 /var/www/sitename.com/app/code/core/Mage/Core/Model/Email/Template.php(452): Zend_Mail->send()
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Model/Email/Template.php(509): Mage_Core_Model_Email_Template->send(Array, Array, Array)
+#4 /var/www/sitename.com/app/code/core/Mage/Core/Model/Email/Template/Mailer.php(84): Mage_Core_Model_Email_Template->sendTransactional('customer_change...', 'general', Array, Array, Array, '1')
+#5 /var/www/sitename.com/app/code/core/Mage/Customer/Model/Customer.php(714): Mage_Core_Model_Email_Template_Mailer->send()
+#6 /var/www/sitename.com/app/code/core/Mage/Customer/Model/Customer.php(685): Mage_Customer_Model_Customer->_sendEmailTemplate('customer/change...', 'customer/change...', Array, '1', 'test@mail.ru')
+#7 /var/www/sitename.com/app/code/core/Mage/Customer/controllers/AccountController.php(1024): Mage_Customer_Model_Customer->sendChangedPasswordOrEmail()
+#8 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Mage_Customer_AccountController->editPostAction()
+#9 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('editPost')
+#10 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#11 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#12 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#14 {main}
+2017-02-21T15:32:52+00:00 ERR (3): 
+exception 'Mage_Core_Exception' with message 'Invalid block type: Mage_Feedback_Block_Feedback' in /var/www/sitename.com/app/Mage.php:595
+Stack trace:
+#0 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(495): Mage::throwException('Invalid block t...')
+#1 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('feedback/feedba...', Array)
+#2 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(472): Mage_Core_Model_Layout->createBlock('feedback/feedba...', '')
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(239): Mage_Core_Model_Layout->addBlock('feedback/feedba...', '')
+#4 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(205): Mage_Core_Model_Layout->_generateBlock(Object(Mage_Core_Model_Layout_Element), Object(Mage_Core_Model_Layout_Element))
+#5 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(210): Mage_Core_Model_Layout->generateBlocks(Object(Mage_Core_Model_Layout_Element))
+#6 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(344): Mage_Core_Model_Layout->generateBlocks()
+#7 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(269): Mage_Core_Controller_Varien_Action->generateLayoutBlocks()
+#8 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/IndexController.php(14): Mage_Core_Controller_Varien_Action->loadLayout()
+#9 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_IndexController->indexAction()
+#10 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#11 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#12 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#13 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#14 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#15 {main}
+2017-02-21T16:24:29+00:00 ERR (3): 
+exception 'Exception' with message 'This letter cannot be sent.' in /var/www/sitename.com/app/code/core/Mage/Core/Model/Email/Template.php:374
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/IndexController.php(45): Mage_Core_Model_Email_Template->send('john@someemail....', 'John Doe', Array)
+#1 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_IndexController->feedbackAction()
+#2 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('feedback')
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#5 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#7 {main}
+2017-02-21T16:24:57+00:00 ERR (3): 
+exception 'Exception' with message 'This letter cannot be sent.' in /var/www/sitename.com/app/code/core/Mage/Core/Model/Email/Template.php:374
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/IndexController.php(45): Mage_Core_Model_Email_Template->send('v2.pashkevich@g...', 'John Doe', Array)
+#1 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_IndexController->feedbackAction()
+#2 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('feedback')
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#5 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#7 {main}
+2017-02-21T16:26:56+00:00 ERR (3): 
+exception 'Exception' with message 'This letter cannot be sent.' in /var/www/sitename.com/app/code/core/Mage/Core/Model/Email/Template.php:374
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/IndexController.php(32): Mage_Core_Model_Email_Template->send('v2.pashkevich@g...', 'John Doe', Array)
+#1 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_IndexController->feedbackAction()
+#2 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('feedback')
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#5 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#7 {main}
+2017-02-21T16:27:06+00:00 ERR (3): 
+exception 'Exception' with message 'This letter cannot be sent.' in /var/www/sitename.com/app/code/core/Mage/Core/Model/Email/Template.php:374
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/IndexController.php(32): Mage_Core_Model_Email_Template->send('v2.pashkevich@g...', 'John Doe', Array)
+#1 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_IndexController->feedbackAction()
+#2 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('feedback')
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#4 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#5 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#6 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#7 {main}
+2017-02-21T21:24:40+00:00 ERR (3): 
+exception 'Mage_Core_Exception' with message 'Invalid block type: Mage_Feedback_Block_Adminhtml_Feedback' in /var/www/sitename.com/app/Mage.php:595
+Stack trace:
+#0 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(495): Mage::throwException('Invalid block t...')
+#1 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('feedback/adminh...', Array)
+#2 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/Adminhtml/FeedbackController.php(15): Mage_Core_Model_Layout->createBlock('feedback/adminh...')
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_Adminhtml_FeedbackController->indexAction()
+#4 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#5 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#6 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#7 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#8 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#9 {main}
+2017-02-21T21:31:29+00:00 ERR (3): 
+exception 'Varien_Exception' with message 'Invalid method Pashkevich_Feedback_Block_Adminhtml_Feedback::_blockGroup(Array
+(
+    [0] => adminhtml_feedback
+)
+)' in /var/www/sitename.com/lib/Varien/Object.php:653
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Varien_Object->__call('_blockGroup', Array)
+#1 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Pashkevich_Feedback_Block_Adminhtml_Feedback->_blockGroup('adminhtml_feedb...')
+#2 /var/www/sitename.com/lib/Varien/Object.php(112): Pashkevich_Feedback_Block_Adminhtml_Feedback->_construct()
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Block/Abstract.php(202): Varien_Object->__construct(Array)
+#4 /var/www/sitename.com/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Container.php(51): Mage_Core_Block_Abstract->__construct()
+#5 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(491): Mage_Adminhtml_Block_Widget_Grid_Container->__construct(Array)
+#6 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('feedback/adminh...', Array)
+#7 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/Adminhtml/FeedbackController.php(15): Mage_Core_Model_Layout->createBlock('feedback/adminh...')
+#8 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_Adminhtml_FeedbackController->indexAction()
+#9 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#10 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#11 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#12 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#14 {main}
+2017-02-21T21:47:47+00:00 ERR (3): 
+exception 'Varien_Exception' with message 'Invalid method Pashkevich_Feedback_Block_Adminhtml_Feedback::_blockGroup(Array
+(
+    [0] => adminhtml_feedback
+)
+)' in /var/www/sitename.com/lib/Varien/Object.php:653
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Varien_Object->__call('_blockGroup', Array)
+#1 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Pashkevich_Feedback_Block_Adminhtml_Feedback->_blockGroup('adminhtml_feedb...')
+#2 /var/www/sitename.com/lib/Varien/Object.php(112): Pashkevich_Feedback_Block_Adminhtml_Feedback->_construct()
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Block/Abstract.php(202): Varien_Object->__construct(Array)
+#4 /var/www/sitename.com/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Container.php(51): Mage_Core_Block_Abstract->__construct()
+#5 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(491): Mage_Adminhtml_Block_Widget_Grid_Container->__construct(Array)
+#6 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('feedback/adminh...', Array)
+#7 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/Adminhtml/FeedbackController.php(15): Mage_Core_Model_Layout->createBlock('feedback/adminh...')
+#8 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_Adminhtml_FeedbackController->indexAction()
+#9 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#10 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#11 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#12 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#14 {main}
+2017-02-21T21:48:20+00:00 ERR (3): 
+exception 'Varien_Exception' with message 'Invalid method Pashkevich_Feedback_Block_Adminhtml_Feedback::_blockGroup(Array
+(
+    [0] => adminhtml_feedback
+)
+)' in /var/www/sitename.com/lib/Varien/Object.php:653
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Varien_Object->__call('_blockGroup', Array)
+#1 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Pashkevich_Feedback_Block_Adminhtml_Feedback->_blockGroup('adminhtml_feedb...')
+#2 /var/www/sitename.com/lib/Varien/Object.php(112): Pashkevich_Feedback_Block_Adminhtml_Feedback->_construct()
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Block/Abstract.php(202): Varien_Object->__construct(Array)
+#4 /var/www/sitename.com/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Container.php(51): Mage_Core_Block_Abstract->__construct()
+#5 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(491): Mage_Adminhtml_Block_Widget_Grid_Container->__construct(Array)
+#6 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('feedback/adminh...', Array)
+#7 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/Adminhtml/FeedbackController.php(15): Mage_Core_Model_Layout->createBlock('feedback/adminh...')
+#8 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_Adminhtml_FeedbackController->indexAction()
+#9 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#10 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#11 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#12 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#14 {main}
+2017-02-21T21:50:05+00:00 ERR (3): 
+exception 'Varien_Exception' with message 'Invalid method Pashkevich_Feedback_Block_Adminhtml_Feedback::_blockGroup(Array
+(
+    [0] => adminhtml_feedback
+)
+)' in /var/www/sitename.com/lib/Varien/Object.php:653
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Varien_Object->__call('_blockGroup', Array)
+#1 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Pashkevich_Feedback_Block_Adminhtml_Feedback->_blockGroup('adminhtml_feedb...')
+#2 /var/www/sitename.com/lib/Varien/Object.php(112): Pashkevich_Feedback_Block_Adminhtml_Feedback->_construct()
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Block/Abstract.php(202): Varien_Object->__construct(Array)
+#4 /var/www/sitename.com/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Container.php(51): Mage_Core_Block_Abstract->__construct()
+#5 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(491): Mage_Adminhtml_Block_Widget_Grid_Container->__construct(Array)
+#6 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('feedback/adminh...', Array)
+#7 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/Adminhtml/FeedbackController.php(15): Mage_Core_Model_Layout->createBlock('feedback/adminh...')
+#8 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_Adminhtml_FeedbackController->indexAction()
+#9 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#10 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#11 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#12 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#14 {main}
+2017-02-21T21:50:10+00:00 ERR (3): 
+exception 'Varien_Exception' with message 'Invalid method Pashkevich_Feedback_Block_Adminhtml_Feedback::_blockGroup(Array
+(
+    [0] => adminhtml_feedback
+)
+)' in /var/www/sitename.com/lib/Varien/Object.php:653
+Stack trace:
+#0 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Varien_Object->__call('_blockGroup', Array)
+#1 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/Block/Adminhtml/Feedback.php(16): Pashkevich_Feedback_Block_Adminhtml_Feedback->_blockGroup('adminhtml_feedb...')
+#2 /var/www/sitename.com/lib/Varien/Object.php(112): Pashkevich_Feedback_Block_Adminhtml_Feedback->_construct()
+#3 /var/www/sitename.com/app/code/core/Mage/Core/Block/Abstract.php(202): Varien_Object->__construct(Array)
+#4 /var/www/sitename.com/app/code/core/Mage/Adminhtml/Block/Widget/Grid/Container.php(51): Mage_Core_Block_Abstract->__construct()
+#5 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(491): Mage_Adminhtml_Block_Widget_Grid_Container->__construct(Array)
+#6 /var/www/sitename.com/app/code/core/Mage/Core/Model/Layout.php(437): Mage_Core_Model_Layout->_getBlockInstance('feedback/adminh...', Array)
+#7 /var/www/sitename.com/app/code/local/Pashkevich/Feedback/controllers/Adminhtml/FeedbackController.php(15): Mage_Core_Model_Layout->createBlock('feedback/adminh...')
+#8 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Pashkevich_Feedback_Adminhtml_FeedbackController->indexAction()
+#9 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('index')
+#10 /var/www/sitename.com/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#11 /var/www/sitename.com/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#12 /var/www/sitename.com/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#13 /var/www/sitename.com/index.php(83): Mage::run('', 'store')
+#14 {main}

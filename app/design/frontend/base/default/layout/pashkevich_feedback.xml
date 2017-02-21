@@ -1,0 +1,12 @@
+<layout>
+    <feedback_index_index>
+        <reference name="content">
+            <block type="feedback/feedback" template="feedback/feedback.phtml" />
+        </reference>
+    </feedback_index_index>
+    <feedback_index_feedback>
+        <reference name="content">
+            <block type="feedback/thank" name="thank" template="feedback/thank.phtml" />
+        </reference>
+    </feedback_index_feedback>
+</layout>
