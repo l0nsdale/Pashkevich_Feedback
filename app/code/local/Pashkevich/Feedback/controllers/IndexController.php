@@ -20,9 +20,16 @@ class Pashkevich_Feedback_IndexController extends Mage_Core_Controller_Front_Act
         $name = Mage::app()->getRequest()->getParam("name");
         $email = Mage::app()->getRequest()->getParam("email");
         $message = Mage::app()->getRequest()->getParam("message");
+        $mail = Mage::getModel('core/email');
+        $mail->setToName($name);
+        $mail->setToEmail($email);
+        $mail->setBody($message);
+        $mail->setSubject(Mage::helper("feedback")->__('Feedback'));
+        $mail->setType('text');
         if (isset($name, $email, $message)) {
             if (!empty($name) && !empty($message)) {
                 try{
+                    $mail->send();
                     $model = Mage::getModel("feedback/feedback");
                     $model->setName($name);
                     $model->setEmail($email);
